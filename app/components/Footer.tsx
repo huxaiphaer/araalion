@@ -2,33 +2,61 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-sapphire-900 text-white">
-      <div className="mx-auto max-w-7xl px-6 py-16">
+    <footer
+      className="relative overflow-hidden text-white"
+      style={{ background: "linear-gradient(180deg, #051852 0%, #1549C9 100%)" }}
+    >
+      {/* Decorative circle */}
+      <div
+        className="absolute top-0 right-0 w-80 h-80 rounded-full opacity-10 pointer-events-none"
+        style={{ background: "radial-gradient(circle, #adc0f5 0%, transparent 70%)" }}
+      />
+
+      <div className="relative mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-white text-sapphire-700 font-bold text-lg">
+            <div className="flex items-center gap-3 mb-5">
+              <span
+                className="flex h-11 w-11 items-center justify-center rounded-xl font-bold text-lg text-sapphire-500
+                transition-transform duration-300 hover:scale-110"
+                style={{ background: "white" }}
+              >
                 A
               </span>
               <div>
-                <span className="block text-lg font-bold leading-tight">
-                  ARAALION
-                </span>
-                <span className="block text-[11px] font-medium text-sapphire-300 uppercase tracking-widest">
+                <span className="block text-lg font-bold leading-tight">ARAALION</span>
+                <span className="block text-[11px] font-medium text-white/60 uppercase tracking-widest">
                   Enterprises (U) SMC Ltd
                 </span>
               </div>
             </div>
-            <p className="text-sm text-sapphire-200 leading-relaxed max-w-xs">
-              A diversified and customer-focused enterprise committed to
-              delivering high-quality products and services in Uganda.
+            <p className="text-sm text-white/65 leading-relaxed max-w-xs">
+              A diversified and customer-focused enterprise committed to delivering high-quality
+              products and services in Uganda.
             </p>
+            {/* Social / contact strip */}
+            <div className="mt-5 flex gap-3">
+              <a
+                href="tel:+256775564851"
+                className="flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-xs font-medium
+                text-white/80 transition-all duration-200 hover:bg-white/20 hover:text-white"
+              >
+                📞 Call Us
+              </a>
+              <a
+                href="mailto:ramathanaraali@gmail.com"
+                className="flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-xs font-medium
+                text-white/80 transition-all duration-200 hover:bg-white/20 hover:text-white"
+              >
+                ✉ Email
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-sapphire-300 mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-white/50 mb-5">
               Quick Links
             </h3>
             <ul className="space-y-3">
@@ -41,8 +69,9 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-sapphire-200 hover:text-white transition-colors"
+                    className="group flex items-center gap-2 text-sm text-white/65 transition-all duration-200 hover:text-white"
                   >
+                    <span className="h-px w-3 bg-white/30 transition-all duration-300 group-hover:w-5 group-hover:bg-white" />
                     {link.label}
                   </Link>
                 </li>
@@ -52,7 +81,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-sapphire-300 mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-white/50 mb-5">
               Services
             </h3>
             <ul className="space-y-3">
@@ -65,8 +94,9 @@ export default function Footer() {
                 <li key={service}>
                   <Link
                     href="/services"
-                    className="text-sm text-sapphire-200 hover:text-white transition-colors"
+                    className="group flex items-center gap-2 text-sm text-white/65 transition-all duration-200 hover:text-white"
                   >
+                    <span className="h-px w-3 bg-white/30 transition-all duration-300 group-hover:w-5 group-hover:bg-white" />
                     {service}
                   </Link>
                 </li>
@@ -76,73 +106,31 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-sapphire-300 mb-4">
+            <h3 className="text-xs font-semibold uppercase tracking-wider text-white/50 mb-5">
               Contact Us
             </h3>
-            <ul className="space-y-3 text-sm text-sapphire-200">
-              <li className="flex items-start gap-2">
-                <svg
-                  className="w-4 h-4 mt-0.5 shrink-0 text-sapphire-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
+            <ul className="space-y-4 text-sm text-white/65">
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 text-base">📍</span>
                 <span>
                   Civic Centre, Nkrumah Road
                   <br />
                   P.O. Box 199143, GPO Kampala
                 </span>
               </li>
-              <li className="flex items-start gap-2">
-                <svg
-                  className="w-4 h-4 mt-0.5 shrink-0 text-sapphire-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 text-base">📞</span>
                 <span>
                   0775 564851
                   <br />
                   0702 806791
                 </span>
               </li>
-              <li className="flex items-start gap-2">
-                <svg
-                  className="w-4 h-4 mt-0.5 shrink-0 text-sapphire-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
+              <li className="flex items-start gap-3">
+                <span className="mt-0.5 text-base">✉</span>
                 <a
                   href="mailto:ramathanaraali@gmail.com"
-                  className="hover:text-white transition-colors"
+                  className="hover:text-white transition-colors duration-200 break-all"
                 >
                   ramathanaraali@gmail.com
                 </a>
@@ -151,13 +139,12 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom */}
-        <div className="mt-12 border-t border-sapphire-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-sapphire-400">
-            &copy; {new Date().getFullYear()} ARAALION ENTERPRISES (U) SMC
-            LIMITED. All rights reserved.
+        {/* Bottom bar */}
+        <div className="mt-14 border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-white/40">
+            &copy; {new Date().getFullYear()} ARAALION ENTERPRISES (U) SMC LIMITED. All rights reserved.
           </p>
-          <p className="text-xs text-sapphire-500">
+          <p className="text-xs text-white/35 italic">
             Leading with integrity. Innovating with wisdom.
           </p>
         </div>
