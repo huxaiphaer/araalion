@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 
@@ -38,11 +39,17 @@ export default function Header() {
         {/* Logo / Brand */}
         <Link href="/" className="flex items-center gap-3 group">
           <span
-            className="relative flex h-10 w-10 items-center justify-center rounded-xl font-bold text-lg text-white overflow-hidden
+            className="relative flex h-10 w-10 items-center justify-center rounded-xl overflow-hidden
             transition-transform duration-300 group-hover:scale-110"
             style={{ background: "linear-gradient(135deg, #1549C9 0%, #051852 100%)" }}
           >
-            A
+            <Image
+src="/logo-white.png"
+              alt="ARAALION Logo"
+              width={32}
+              height={32}
+              className="object-contain"
+            />
             <span className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </span>
           <div className="hidden sm:block">

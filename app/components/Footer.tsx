@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -18,11 +19,17 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-5">
               <span
-                className="flex h-11 w-11 items-center justify-center rounded-xl font-bold text-lg text-sapphire-500
+                className="flex h-11 w-11 items-center justify-center rounded-xl overflow-hidden
                 transition-transform duration-300 hover:scale-110"
-                style={{ background: "white" }}
+                style={{ background: "linear-gradient(135deg, #1549C9 0%, #051852 100%)" }}
               >
-                A
+                <Image
+src="/logo-white.png"
+                  alt="ARAALION Logo"
+                  width={34}
+                  height={34}
+                  className="object-contain"
+                />
               </span>
               <div>
                 <span className="block text-lg font-bold leading-tight">ARAALION</span>

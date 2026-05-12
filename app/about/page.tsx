@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const coreValues = [
@@ -107,9 +108,15 @@ export default function AboutPage() {
                 style={{ background: "linear-gradient(135deg, #1549C9 0%, #082470 100%)" }}>
                 <div className="absolute top-0 right-0 w-40 h-40 rounded-full opacity-10 pointer-events-none"
                   style={{ background: "radial-gradient(circle, white 0%, transparent 70%)" }} />
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/15 text-3xl font-bold mb-5
-                  transition-transform duration-500 hover:scale-110">
-                  A
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/15 mb-5
+                  transition-transform duration-500 hover:scale-110 overflow-hidden">
+                  <Image
+src="/logo-white.png"
+                    alt="ARAALION Logo"
+                    width={52}
+                    height={52}
+                    className="object-contain"
+                  />
                 </div>
                 <h3 className="text-lg font-bold mb-4">Brand Identity</h3>
                 <ul className="space-y-3 text-sm text-white/80">
