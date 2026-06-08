@@ -53,6 +53,19 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Check COOLIFY_TOKEN availability
+        env:
+          COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
+        run: |
+          echo "is the secret even defined in context? -> '${{ secrets.COOLIFY_TOKEN != '' }}'"
+          if [ -z "${COOLIFY_TOKEN}" ]; then
+            echo "RESULT: ❌ EMPTY — secret is NOT reaching this job"
+          else
+            echo "RESULT: ✅ present"
+            echo "length = ${#COOLIFY_TOKEN}  (should be 43)"
+            echo "starts-with-17pipe = $(case "$COOLIFY_TOKEN" in 17\|*) echo yes;; *) echo no;; esac)"
+          fi
+
       - name: Trigger Coolify redeploy
         env:
           COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
