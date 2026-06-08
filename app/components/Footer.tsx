@@ -24,7 +24,7 @@ export default function Footer() {
                 style={{ background: "linear-gradient(135deg, #1549C9 0%, #051852 100%)" }}
               >
                 <Image
-src="/logo-white.png"
+                  src="/02_logo_white_transparent.png"
                   alt="ARAALION Logo"
                   width={34}
                   height={34}

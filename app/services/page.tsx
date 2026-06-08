@@ -17,7 +17,7 @@ const services = [
       "Writing materials and administrative tools",
       "Bulk and custom orders for institutions",
     ],
-    image: "/service-stationery.png",
+    image: "/06_stationery_supplies.jpeg",
     icon: (
       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
@@ -36,7 +36,7 @@ const services = [
       "School uniforms",
       "Educational aids and learning tools",
     ],
-    image: "/service-scholastic.png",
+    image: "/07_scholastic_materials_distribution.jpeg",
     icon: (
       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
@@ -55,7 +55,8 @@ const services = [
       "Installation, maintenance, and IT support",
       "Technology consulting and procurement",
     ],
-    image: "/service-ict.png",
+    image: "/09_ict_digital_solutions.jpeg",
+    secondaryImage: "/08_ict_equipment.jpeg",
     icon: (
       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25z" />
@@ -75,7 +76,8 @@ const services = [
       "Embroidery and branded merchandise",
       "Corporate branding solutions",
     ],
-    image: "/service-branding.png",
+    image: "/10_branding_graphic_design.jpeg",
+    secondaryImage: "/11_branding_promotional_merchandise.jpeg",
     icon: (
       <svg className="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
@@ -176,16 +178,39 @@ export default function ServicesPage() {
 
               {/* Items side */}
               <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                {/* Service image */}
-                <div className="relative w-full h-48 sm:h-56 rounded-2xl overflow-hidden mb-6 bg-sapphire-100">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
+                {/* Service image(s) */}
+                {"secondaryImage" in service && service.secondaryImage ? (
+                  <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="relative w-full h-48 sm:h-56 rounded-2xl overflow-hidden bg-sapphire-100 shadow-sm border border-sapphire-100/10">
+                      <Image
+                        src={service.image}
+                        alt={service.title}
+                        fill
+                        className="object-cover transition-transform duration-500 hover:scale-103"
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                      />
+                    </div>
+                    <div className="relative w-full h-48 sm:h-56 rounded-2xl overflow-hidden bg-sapphire-100 shadow-sm border border-sapphire-100/10">
+                      <Image
+                        src={service.secondaryImage as string}
+                        alt={service.title}
+                        fill
+                        className="object-cover transition-transform duration-500 hover:scale-103"
+                        sizes="(max-width: 768px) 50vw, 25vw"
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="relative w-full h-48 sm:h-56 rounded-2xl overflow-hidden mb-6 bg-sapphire-100 shadow-sm border border-sapphire-100/10">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-500 hover:scale-102"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                )}
                 <div className="rounded-2xl p-6 sm:p-8 border border-sapphire-100" style={{ background: "#eef2fd" }}>
                   <h3 className="text-xs font-semibold uppercase tracking-wider mb-5" style={{ color: "#1549C9" }}>
                     What we provide

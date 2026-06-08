@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useScrollReveal } from "../hooks/useScrollReveal";
 
 const contactDetails = [
@@ -225,12 +226,21 @@ export default function ContactPage() {
 
             {/* Sidebar */}
             <div className="lg:col-span-2 space-y-5 reveal reveal-right">
-              {/* Company info card */}
+               {/* Company info card */}
               <div className="rounded-2xl p-6 sm:p-8 text-white relative overflow-hidden"
                 style={{ background: "linear-gradient(135deg, #1549C9 0%, #051852 100%)" }}>
+                {/* Corner logo watermark */}
+                <div className="absolute right-[-8%] bottom-[-8%] w-[160px] h-[160px] opacity-[0.06] pointer-events-none mix-blend-overlay">
+                  <Image
+                    src="/12_logo_watermark_corner.png"
+                    alt="ARAALION Corner Watermark"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
                 <div className="absolute top-0 right-0 w-36 h-36 rounded-full opacity-10 pointer-events-none"
                   style={{ background: "radial-gradient(circle, white 0%, transparent 70%)" }} />
-                <h3 className="text-base font-bold mb-5 relative">Company Information</h3>
+                <h3 className="text-base font-bold mb-5 relative z-10">Company Information</h3>
                 <dl className="space-y-3.5 text-sm relative">
                   {companyInfo.map((item) => (
                     <div key={item.label} className="border-b border-white/10 pb-3 last:border-0 last:pb-0">

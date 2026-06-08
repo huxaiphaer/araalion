@@ -17,15 +17,17 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setMobileOpen(false);
+  }
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
-  useEffect(() => {
-    setMobileOpen(false);
-  }, [pathname]);
 
   return (
     <header
@@ -44,7 +46,7 @@ export default function Header() {
             style={{ background: "linear-gradient(135deg, #1549C9 0%, #051852 100%)" }}
           >
             <Image
-src="/logo-white.png"
+              src="/02_logo_white_transparent.png"
               alt="ARAALION Logo"
               width={32}
               height={32}
