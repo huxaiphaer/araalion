@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useScrollReveal } from "./hooks/useScrollReveal";
 
 const services = [
@@ -8,6 +9,7 @@ const services = [
     title: "Stationery Supply",
     description:
       "High-quality printing paper, notebooks, files, folders, writing materials, and office consumables for every organization.",
+    image: "https://web-xolb0reinzyryh7e2bwjykqy.153.75.248.169.sslip.io/06_stationery_supplies.jpeg",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
@@ -18,6 +20,7 @@ const services = [
     title: "Scholastic Materials",
     description:
       "Textbooks, exercise books, school uniforms, and educational aids — making quality learning accessible and affordable.",
+    image: "https://web-xolb0reinzyryh7e2bwjykqy.153.75.248.169.sslip.io/07_scholastic_materials_distribution.jpeg",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
@@ -28,6 +31,7 @@ const services = [
     title: "ICT Solutions",
     description:
       "Computers, laptops, printers, networking equipment, installation, maintenance, and full IT support for digital transformation.",
+    image: "https://web-xolb0reinzyryh7e2bwjykqy.153.75.248.169.sslip.io/09_ict_digital_solutions.jpeg",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25z" />
@@ -38,6 +42,7 @@ const services = [
     title: "Branding & Promotions",
     description:
       "Graphic design, printing, signage, banners, embroidery, branded merchandise, and full corporate identity solutions.",
+    image: "https://web-xolb0reinzyryh7e2bwjykqy.153.75.248.169.sslip.io/10_branding_graphic_design.jpeg",
     icon: (
       <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
@@ -175,19 +180,30 @@ export default function Home() {
             {services.map((service) => (
               <div
                 key={service.title}
-                className="reveal group bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-sapphire-100 hover-lift cursor-default"
+                className="reveal group bg-white rounded-2xl p-5 shadow-sm border border-sapphire-100 hover-lift cursor-default flex flex-col justify-between"
               >
-                <div
-                  className="flex h-12 w-12 items-center justify-center rounded-xl text-white
-                  transition-transform duration-300 group-hover:scale-110"
-                  style={{ background: "linear-gradient(135deg, #1549C9 0%, #1140b5 100%)" }}
-                >
-                  {service.icon}
+                <div>
+                  <div className="relative w-full h-36 rounded-xl overflow-hidden mb-5 bg-sapphire-50">
+                    <Image
+                      src={service.image}
+                      alt={service.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 25vw"
+                    />
+                  </div>
+                  <div
+                    className="flex h-10 w-10 items-center justify-center rounded-lg text-white
+                    transition-transform duration-300 group-hover:scale-110"
+                    style={{ background: "linear-gradient(135deg, #1549C9 0%, #1140b5 100%)" }}
+                  >
+                    {service.icon}
+                  </div>
+                  <div className="mt-4 h-0.5 w-8 rounded-full transition-all duration-500 group-hover:w-full"
+                    style={{ background: "#1549C9" }} />
+                  <h3 className="mt-3 text-base font-semibold text-sapphire-900">{service.title}</h3>
+                  <p className="mt-2 text-sm text-sapphire-600 leading-relaxed">{service.description}</p>
                 </div>
-                <div className="mt-5 h-0.5 w-8 rounded-full transition-all duration-500 group-hover:w-full"
-                  style={{ background: "#1549C9" }} />
-                <h3 className="mt-3 text-base sm:text-lg font-semibold text-sapphire-900">{service.title}</h3>
-                <p className="mt-2 text-sm text-sapphire-600 leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -253,30 +269,36 @@ export default function Home() {
               </Link>
             </div>
 
-            {/* Cards */}
-            <div className="reveal reveal-right">
-              <div
-                className="rounded-3xl p-7 sm:p-10"
-                style={{ background: "linear-gradient(135deg, #1549C9 0%, #082470 100%)" }}
-              >
-                <div className="space-y-4">
-                  {[
-                    { title: "Our Vision", body: "To be a leading and trusted provider of stationery, educational supplies, ICT solutions, and branding services in Uganda and beyond." },
-                    { title: "Our Mission", body: "To deliver high-quality, affordable, and innovative products and services that support education, business efficiency, and brand visibility." },
-                  ].map((item, i) => (
-                    <div
-                      key={item.title}
-                      className="rounded-2xl bg-white/10 backdrop-blur p-5 border border-white/15
-                      transition-all duration-300 hover:bg-white/18 hover:-translate-y-1"
-                    >
-                      <div className="flex items-center gap-3 mb-2">
-                        <span className="h-2 w-2 rounded-full bg-white/60" />
-                        <h4 className="font-semibold text-white text-sm sm:text-base">{item.title}</h4>
-                      </div>
-                      <p className="text-xs sm:text-sm text-white/70 leading-relaxed">{item.body}</p>
+            {/* Cards and Welcome Image */}
+            <div className="reveal reveal-right relative min-h-[460px] flex flex-col justify-end">
+              <div className="absolute inset-0 rounded-3xl overflow-hidden shadow-xl border border-sapphire-100/10">
+                <Image
+                  src="https://web-xolb0reinzyryh7e2bwjykqy.153.75.248.169.sslip.io/04_welcome_businesswoman.jpeg"
+                  alt="Welcome to ARAALION"
+                  fill
+                  className="object-cover transition-transform duration-700 hover:scale-102"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-sapphire-950/95 via-sapphire-900/40 to-transparent" />
+              </div>
+              
+              <div className="relative p-6 sm:p-8 space-y-4">
+                {[
+                  { title: "Our Vision", body: "To be a leading and trusted provider of stationery, educational supplies, ICT solutions, and branding services in Uganda and beyond." },
+                  { title: "Our Mission", body: "To deliver high-quality, affordable, and innovative products and services that support education, business efficiency, and brand visibility." },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-2xl bg-white/10 backdrop-blur-md p-5 border border-white/15
+                    transition-all duration-300 hover:bg-white/18 hover:-translate-y-0.5"
+                  >
+                    <div className="flex items-center gap-3 mb-1.5">
+                      <span className="h-2 w-2 rounded-full bg-white/70" />
+                      <h4 className="font-semibold text-white text-sm sm:text-base">{item.title}</h4>
                     </div>
-                  ))}
-                </div>
+                    <p className="text-xs text-white/75 leading-relaxed">{item.body}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

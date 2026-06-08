@@ -86,8 +86,18 @@ export default function AboutPage() {
       </section>
 
       {/* ══ Brand Story ════════════════════════════════════════ */}
-      <section className="bg-white py-16 sm:py-24" ref={storyRef}>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+      <section className="bg-white py-16 sm:py-24 relative overflow-hidden" ref={storyRef}>
+        {/* Soft background watermark */}
+        <div className="absolute -right-12 top-12 w-[350px] h-[350px] opacity-[0.04] pointer-events-none">
+          <Image
+            src="https://web-xolb0reinzyryh7e2bwjykqy.153.75.248.169.sslip.io/05_logo_watermark_light.png"
+            alt="ARAALION Watermark"
+            fill
+            className="object-contain"
+          />
+        </div>
+
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 relative z-10">
           <div className="grid gap-12 lg:grid-cols-2 items-start">
             <div className="reveal reveal-left">
               <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: "#1549C9" }}>
@@ -111,7 +121,7 @@ export default function AboutPage() {
                 <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white/15 mb-5
                   transition-transform duration-500 hover:scale-110 overflow-hidden">
                   <Image
-src="/logo-white.png"
+                    src="https://web-xolb0reinzyryh7e2bwjykqy.153.75.248.169.sslip.io/02_logo_white_transparent.png"
                     alt="ARAALION Logo"
                     width={52}
                     height={52}
@@ -132,6 +142,43 @@ src="/logo-white.png"
                     </li>
                   ))}
                 </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══ Executive Leadership ══════════════════════════════ */}
+      <section className="bg-white pb-16 sm:pb-24">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="rounded-3xl overflow-hidden shadow-xl border border-sapphire-100 flex flex-col md:flex-row items-stretch bg-sapphire-50/15">
+            <div className="relative w-full md:w-2/5 min-h-[300px]">
+              <Image
+                src="https://web-xolb0reinzyryh7e2bwjykqy.153.75.248.169.sslip.io/04_welcome_businesswoman.jpeg"
+                alt="Executive Leadership"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 40vw"
+              />
+            </div>
+            <div className="p-8 sm:p-12 md:w-3/5 flex flex-col justify-center">
+              <span className="text-xs font-semibold uppercase tracking-wider text-sapphire-500 block mb-2">
+                Executive Leadership
+              </span>
+              <h3 className="text-xl sm:text-2xl font-bold text-sapphire-900 mb-4">
+                Message From Leadership
+              </h3>
+              <p className="text-sm sm:text-base text-sapphire-700 leading-relaxed mb-6 italic">
+                &ldquo;Our commitment is to empower enterprises, educational institutions, and individuals across Uganda by providing top-tier solutions that build efficiency and foster growth. Integrity and reliability are the cornerstones of ARAALION.&rdquo;
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="h-10 w-10 rounded-full bg-sapphire-500 flex items-center justify-center font-bold text-white text-sm">
+                  BR
+                </div>
+                <div>
+                  <h4 className="font-bold text-sapphire-900 text-sm">Mr. Bagaya Ramathan</h4>
+                  <p className="text-xs text-sapphire-500">Founder & Director</p>
+                </div>
               </div>
             </div>
           </div>
@@ -203,6 +250,15 @@ src="/logo-white.png"
       {/* ══ Strategic Objectives ═══════════════════════════════ */}
       <section className="relative overflow-hidden py-16 sm:py-24"
         style={{ background: "linear-gradient(135deg, #051852 0%, #1549C9 100%)" }}>
+        {/* Corner logo watermark */}
+        <div className="absolute left-[-5%] top-[-5%] w-[300px] h-[300px] opacity-[0.06] pointer-events-none mix-blend-overlay">
+          <Image
+            src="https://web-xolb0reinzyryh7e2bwjykqy.153.75.248.169.sslip.io/12_logo_watermark_corner.png"
+            alt="ARAALION Corner Watermark"
+            fill
+            className="object-contain"
+          />
+        </div>
         <div className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-10 animate-float-slow pointer-events-none"
           style={{ background: "radial-gradient(circle, white 0%, transparent 70%)" }} />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6" ref={objRef}>
