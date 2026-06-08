@@ -48,3 +48,15 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  coolify:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Trigger Coolify redeploy
+        env:
+          COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
+        run: |
+          curl --fail-with-body -sS -X GET \
+            -H "Authorization: Bearer ${COOLIFY_TOKEN}" \
+            "https://coolify.pixsar.io/api/v1/deploy?uuid=xz2qjj60ha0wt5ktyj3dmiub&force=false"
