@@ -1,0 +1,20 @@
+name: Deploy to Coolify
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Coolify pulls the repo and builds it itself (Nixpacks static export),
+# so this job only needs to trigger a redeploy on the Coolify instance.
+jobs:
+  coolify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Coolify redeploy
+        env:
+          COOLIFY_TOKEN: ${{ secrets.COOLIFY_TOKEN }}
+        run: |
+          curl --fail-with-body -sS -X GET \
+            -H "Authorization: Bearer ${COOLIFY_TOKEN}" \
+            "https://coolify.pixsar.io/api/v1/deploy?uuid=xz2qjj60ha0wt5ktyj3dmiub&force=false"

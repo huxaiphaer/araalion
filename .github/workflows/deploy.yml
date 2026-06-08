@@ -32,6 +32,8 @@ jobs:
 
       - name: Build (static export)
         run: npm run build
+        env:
+          BASE_PATH: /araalion   # GitHub Pages serves from /araalion; Coolify serves from /
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
