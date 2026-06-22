@@ -52,7 +52,7 @@ export default function Footer() {
                 📞 Call Us
               </a>
               <a
-                href="mailto:ramathanaraali@gmail.com"
+                href="mailto:sales@araalion.com"
                 className="flex items-center gap-1.5 rounded-lg border border-white/15 bg-white/10 px-3 py-2 text-xs font-medium
                 text-white/80 transition-all duration-200 hover:bg-white/20 hover:text-white"
               >
@@ -135,12 +135,20 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-0.5 text-base">✉</span>
-                <a
-                  href="mailto:ramathanaraali@gmail.com"
-                  className="hover:text-white transition-colors duration-200 break-all"
-                >
-                  ramathanaraali@gmail.com
-                </a>
+                <div className="flex flex-col gap-1">
+                  <a
+                    href="mailto:sales@araalion.com"
+                    className="hover:text-white transition-colors duration-200 break-all"
+                  >
+                    sales@araalion.com
+                  </a>
+                  <a
+                    href="mailto:bramathan@araalion.com"
+                    className="hover:text-white/80 text-white/60 transition-colors duration-200 text-xs break-all"
+                  >
+                    CEO: bramathan@araalion.com
+                  </a>
+                </div>
               </li>
             </ul>
           </div>
