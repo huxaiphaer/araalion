@@ -47,6 +47,7 @@ export default function AboutPage() {
   const storyRef   = useScrollReveal<HTMLDivElement>({ threshold: 0.08 });
   const vmRef      = useScrollReveal<HTMLDivElement>({ staggerChildren: true, staggerDelay: 120 });
   const valuesRef  = useScrollReveal<HTMLDivElement>({ staggerChildren: true, staggerDelay: 80 });
+  const leadershipRef = useScrollReveal<HTMLDivElement>({ threshold: 0.08 });
   const objRef     = useScrollReveal<HTMLDivElement>({ staggerChildren: true, staggerDelay: 70 });
   const ctaRef     = useScrollReveal<HTMLDivElement>();
 
@@ -196,6 +197,56 @@ src="/logo-white.png"
                 <p className="mt-2 text-sm text-sapphire-600 leading-relaxed">{value.description}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══ Leadership ════════════════════════════════════════ */}
+      <section className="py-16 sm:py-24 bg-sapphire-50/40" ref={leadershipRef}>
+        <div className="mx-auto max-w-7xl px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <p className="text-xs sm:text-sm font-semibold uppercase tracking-wider mb-2" style={{ color: "#1549C9" }}>
+              Our Leadership
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-sapphire-900 sm:text-4xl">Meet Our CEO</h2>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <div className="reveal rounded-3xl bg-white p-6 sm:p-10 shadow-sm border border-sapphire-100 flex flex-col md:flex-row items-center gap-8 hover-lift">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 shrink-0 rounded-2xl overflow-hidden border border-sapphire-100">
+                <Image
+                  src="/images/ceo-ramathan-bagaya.jpg"
+                  alt="Ramathan Bagaya - CEO of Araalion"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="text-center md:text-left space-y-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-sapphire-900">Ramathan Bagaya</h3>
+                  <p className="text-sm font-semibold uppercase tracking-wider animate-shimmer" style={{ color: "#1549C9" }}>
+                    Founder & Chief Executive Officer
+                  </p>
+                </div>
+                <p className="text-sm sm:text-base text-sapphire-700 leading-relaxed">
+                  Under Mr. Ramathan Bagaya&apos;s visionary leadership, ARAALION Enterprises has grown to become a trusted, diversified partner delivering exceptional services in stationery supply, scholastic materials, ICT solutions, and branding across Uganda.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center gap-3 justify-center md:justify-start pt-2">
+                  <a
+                    href="mailto:bramathan@araalion.com"
+                    className="inline-flex items-center gap-2 rounded-xl bg-sapphire-50 px-4 py-2.5 text-xs font-semibold text-sapphire-900 border border-sapphire-100 transition-colors hover:bg-sapphire-100"
+                  >
+                    ✉ bramathan@araalion.com
+                  </a>
+                  <a
+                    href="/contact"
+                    className="inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-xs font-semibold text-white transition-all hover:opacity-90"
+                    style={{ background: "linear-gradient(135deg, #1549C9 0%, #1140b5 100%)" }}
+                  >
+                    Get in Touch
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
