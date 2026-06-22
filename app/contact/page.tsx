@@ -6,8 +6,8 @@ import { useScrollReveal } from "../hooks/useScrollReveal";
 const contactDetails = [
   {
     title: "Visit Us",
-    description: "Civic Centre, Nkrumah Road, Kampala",
-    secondary: "P.O. Box 199143, GPO Kampala",
+    description: "Shop 6, Shoal House, Bombo Road",
+    secondary: "Nakasero III, Central Division, Kampala",
     href: null,
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -18,8 +18,8 @@ const contactDetails = [
   },
   {
     title: "Call Us",
-    description: "0775 564851",
-    secondary: "0702 806791",
+    description: "+256 775 564851",
+    secondary: "+256 702 806791",
     href: "tel:+256775564851",
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,9 +42,9 @@ const contactDetails = [
 
 const companyInfo = [
   { label: "Company Name", value: "ARAALION ENTERPRISES (U) SMC LIMITED" },
-  { label: "Location", value: "Civic Centre, Nkrumah Road, Kampala" },
+  { label: "Location", value: "Shop 6, Shoal House, Bombo Road, Nakasero III, Central Division, Kampala" },
   { label: "Postal Address", value: "P.O. Box 199143, GPO Kampala" },
-  { label: "Telephone", value: "0775 564851 | 0702 806791" },
+  { label: "Telephone", value: "+256 775 564851 | +256 702 806791" },
   { label: "General Email", value: "sales@araalion.com" },
   { label: "CEO Email", value: "bramathan@araalion.com" },
 ];
@@ -168,7 +168,7 @@ export default function ContactPage() {
                       Phone Number
                     </label>
                     <input
-                      type="tel" id="phone" name="phone" placeholder="e.g. 0775 123456"
+                      type="tel" id="phone" name="phone" placeholder="e.g. +256 775 123456"
                       className="w-full rounded-xl border border-sapphire-200 px-4 py-3 text-sm text-sapphire-900
                       placeholder:text-sapphire-400 outline-none transition-all duration-200
                       focus:border-sapphire-500 focus:ring-2 focus:ring-sapphire-500/20 hover:border-sapphire-300"

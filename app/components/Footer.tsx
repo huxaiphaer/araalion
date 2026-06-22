@@ -120,17 +120,17 @@ export default function Footer() {
               <li className="flex items-start gap-3">
                 <span className="mt-0.5 text-base">📍</span>
                 <span>
-                  Civic Centre, Nkrumah Road
+                  Shop 6, Shoal House, Bombo Road,
                   <br />
-                  P.O. Box 199143, GPO Kampala
+                  Nakasero III, Kampala
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-0.5 text-base">📞</span>
                 <span>
-                  0775 564851
+                  +256 775 564851
                   <br />
-                  0702 806791
+                  +256 702 806791
                 </span>
               </li>
               <li className="flex items-start gap-3">

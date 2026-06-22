@@ -336,7 +336,7 @@ export default function Home() {
                 className="group rounded-xl border-2 border-white/30 px-7 py-3.5 text-sm font-semibold text-white text-center
                 backdrop-blur transition-all duration-300 hover:border-white/60 hover:bg-white/10 hover:-translate-y-1"
               >
-                📞 Call: 0775 564851
+                📞 Call: +256 775 564851
               </a>
             </div>
           </div>
